@@ -2,13 +2,19 @@ import './App.css';
 
 
 const Hello = (props) => {
-  console.log(props)
+  const {name, age} = props;
+  const bornYear = () => {
+    const yearNow = new Date().getFullYear();
+    return yearNow - age;
+  }
   return (
     <div>
-      <p>Hello I am {props.name}, I am {props.age} years old</p>
+      <p>Hello I am {name}, I am {age} years old</p>
+      <p>I was born in year {bornYear()}</p>
     </div>
   )
 }
+
 
 
 function App() {
